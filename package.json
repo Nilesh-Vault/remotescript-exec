@@ -1,0 +1,78 @@
+{
+  "name": "remotescript-exec",
+  "displayName": "remotescript-exec",
+  "description": "remotescript-exec executes script on remote aws instance and provides console output in vscode ",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.95.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+      "configuration":
+        {
+          "title": "remotescript-exec Extension",
+          "properties": {
+            "remotescript-exec.Region":{
+              "type": "string",
+              "default": "",
+              "description": "AWS Region for the connection"
+            },
+            "remotescript-exec.instanceId":{
+              "type": "string",
+              "default": "",
+              "description": "AWS Instance ID"
+            },
+            "remotescript-exec.accessKeyId":{
+              "type": "string",
+              "default": "",
+              "description": "AWS Access Key ID"
+            },
+            "remotescript-exec.secretAccessKey":{
+              "type": "string",
+              "default": "",
+              "description": "AWS secret Access Key"
+            }
+          }
+        },
+      
+    "commands": [
+      {
+        "command": "remotescript-exec.checkConfig",
+        "title": "checkConfig"
+      },
+      {
+        "command": "remotescript-exec.validateAWS",
+        "title": "validateAWS"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.95.0",
+    "@types/mocha": "^10.0.9",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^8.10.0",
+    "@typescript-eslint/parser": "^8.7.0",
+    "eslint": "^9.13.0",
+    "typescript": "^5.6.3",
+    "ts-loader": "^9.5.1",
+    "webpack": "^5.95.0",
+    "webpack-cli": "^5.1.4",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  }
+}
