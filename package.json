@@ -12,33 +12,31 @@
   "activationEvents": [],
   "main": "./dist/extension.js",
   "contributes": {
-      "configuration":
-        {
-          "title": "remotescript-exec Extension",
-          "properties": {
-            "remotescript-exec.Region":{
-              "type": "string",
-              "default": "",
-              "description": "AWS Region for the connection"
-            },
-            "remotescript-exec.instanceId":{
-              "type": "string",
-              "default": "",
-              "description": "AWS Instance ID"
-            },
-            "remotescript-exec.accessKeyId":{
-              "type": "string",
-              "default": "",
-              "description": "AWS Access Key ID"
-            },
-            "remotescript-exec.secretAccessKey":{
-              "type": "string",
-              "default": "",
-              "description": "AWS secret Access Key"
-            }
-          }
+    "configuration": {
+      "title": "remotescript-exec Extension",
+      "properties": {
+        "remotescript-exec.region": {
+          "type": "string",
+          "default": "",
+          "description": "AWS Region for the connection"
         },
-      
+        "remotescript-exec.instanceId": {
+          "type": "string",
+          "default": "",
+          "description": "AWS Instance ID"
+        },
+        "remotescript-exec.accessKeyId": {
+          "type": "string",
+          "default": "",
+          "description": "AWS Access Key ID"
+        },
+        "remotescript-exec.secretAccessKey": {
+          "type": "string",
+          "default": "",
+          "description": "AWS secret Access Key"
+        }
+      }
+    },
     "commands": [
       {
         "command": "remotescript-exec.checkConfig",
