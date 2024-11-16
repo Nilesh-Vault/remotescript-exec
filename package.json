@@ -1,5 +1,6 @@
 {
   "name": "remotescript-exec",
+  "publisher": "nilesh-kumar",
   "displayName": "remotescript-exec",
   "description": "remotescript-exec executes script on remote aws instance and provides console output in vscode ",
   "version": "0.0.1",

@@ -86,10 +86,8 @@ export function activate(context: vscode.ExtensionContext) {
 
                 if (result) {
 					vscode.window.showInformationMessage('AWS credentials validated successfully!');
-					outputChannel.appendLine('debugging stuffs here ');
                 } else {
                     vscode.window.showErrorMessage('AWS validation failed!');
-					outputChannel.appendLine('debugging stuffs here ');
 
                 }
             } catch (error) {
